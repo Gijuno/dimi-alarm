@@ -6,6 +6,7 @@ class Timer extends React.Component {
     }
 
     render() {
+        const { date } = this.state;
         return (
             <div>
                 {date.getHours() < 10 ? "0" + date.getHours() : date.getHours()}
