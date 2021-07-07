@@ -1,17 +1,20 @@
 import React from "react";
-
+import Clock from "react-live-clock";
+import Timechecker from "./Timechecker";
 class Timer extends React.Component {
     state = {
         date: new Date(),
+        alarm: false,
+    }
+
+    timechecker() {
+        this.setState(Timechecker())
     }
 
     render() {
-        const { date } = this.state;
         return (
             <div>
-                {date.getHours() < 10 ? "0" + date.getHours() : date.getHours()}
-                &nbsp;:&nbsp;
-                {date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes()}
+                <Clock format={'HH:mm:ss'} ticking={true} timezone={'KR/Pacific'}/>
             </div>
         )
     }
