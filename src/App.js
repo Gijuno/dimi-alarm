@@ -1,4 +1,5 @@
-import Timer from './Timer';
+import Timer from './Timer'
+import LiveClock from 'react-live-clock'
 
 function App() {
   return (
