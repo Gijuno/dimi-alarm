@@ -8,7 +8,6 @@ class Timer extends React.Component {
             date: new Date(),
             minute: null,
             period: null,
-            alarm: null,
         };
     }
 
@@ -20,9 +19,10 @@ class Timer extends React.Component {
                 this.setState({ date: new Date() });
                 const hour = String(this.checkUnderTen(this.state.date.getHours()))
                 const min = String(this.checkUnderTen(this.state.date.getMinutes()))
-                const checked = Timechecker(hour + min);
-                this.setState({ period: checked[1] });
-                this.setState({ alarm: checked[0] });
+                if (min != this.state.minute) {
+                    const checked = Timechecker(hour + min);
+                    this.setState({ period: checked });
+                }
                 this.setState({ minute: this.state.date.getMinutes()});
             },
             1000
