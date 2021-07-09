@@ -29,7 +29,6 @@ const Timechecker = (now) => {
             console.log("SUCCESS"); 
             console.log("count === " + count);
             bellPlayer()
-            count=0
             return [true, times[now]];
         } else {
             console.log("count === " + count);
