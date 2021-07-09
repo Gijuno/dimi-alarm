@@ -12,11 +12,15 @@ class Timer extends React.Component {
         };
     }
 
+    checkUnderTen = (time) => { return Number(time) < 10 ? '0'+time : time }
+
     componentDidMount() {
         this.timerID = setInterval(
             () => {
                 this.setState({ date: new Date() });
-                const checked = Timechecker(String(this.state.date.getHours())+String(this.state.date.getMinutes()));
+                const hour = String(this.checkUnderTen(this.state.date.getHours()))
+                const min = String(this.checkUnderTen(this.state.date.getMinutes()))
+                const checked = Timechecker(hour + min);
                 this.setState({ period: checked[1] });
                 this.setState({ alarm: checked[0] });
                 this.setState({ minute: this.state.date.getMinutes()});
