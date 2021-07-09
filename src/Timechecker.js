@@ -1,5 +1,5 @@
 import {bellPlayer} from "./App.js"
-
+var count = 0
 const Timechecker = (now) => {
     // const fixed_time = {
     //     "1034": "TEST",
@@ -19,14 +19,23 @@ const Timechecker = (now) => {
     //     "1640": "청소시간" };
     console.log(now);
     const times = new Map([[
-        '1509', "TEST"
+        '1553', "TEST"
     ], [
         '0900', "1교시 시작"
     ]]);
-    if([...times.keys()].includes(now)) { //매 초마다 해당됨
-        console.log("SUCCESS"); 
-        bellPlayer()
-        return [true, times[now]];
+    if([...times.keys()].includes(now)) {
+        count++
+        if (count===1) {
+            console.log("SUCCESS"); 
+            console.log("count === " + count);
+            bellPlayer()
+            count=0
+            return [true, times[now]];
+        } else {
+            console.log("count === " + count);
+            return [false, "수업중"];
+        }
+        
     } else {
         return [false, "수업중"];
     }
