@@ -25,7 +25,7 @@ class Timer extends React.Component {
                 this.setState({ alarm: checked[0] });
                 this.setState({ minute: this.state.date.getMinutes()});
             },
-            1000
+            60000
         );
     }
 
