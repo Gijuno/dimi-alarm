@@ -3,7 +3,7 @@ var count = 0
 const Timechecker = (now) => {
     console.log(now);
     const times = new Map([
-        ['0900', "1교시 시작"],
+        ['0808', "1교시 시작"],
         ['2122', "1교시 끝"],
         ['1000', "2교시 시작"],
         ['1050', "2교시 끝"],
@@ -31,7 +31,7 @@ const Timechecker = (now) => {
         }
         
     } else {
-        return "수업중";
+        return null;
     }
 }
 
