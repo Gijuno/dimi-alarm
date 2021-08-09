@@ -8,7 +8,7 @@ class Timer extends React.Component {
             date: new Date(),
             minute: null,
             period: null,
-            alarm: null,
+            time: null,
         };
     }
 
@@ -20,9 +20,13 @@ class Timer extends React.Component {
                 this.setState({ date: new Date() });
                 const hour = String(this.checkUnderTen(this.state.date.getHours()))
                 const min = String(this.checkUnderTen(this.state.date.getMinutes()))
-                const checked = Timechecker(hour + min);
-                this.setState({ period: checked[1] });
-                this.setState({ alarm: checked[0] });
+                if (min != this.state.minute) {
+                    const checked = Timechecker(hour + min);
+                    if (checked != null) {
+                        this.setState({ time: checked[0] })
+                        this.setState({ period: checked[1] });
+                    }
+                }
                 this.setState({ minute: this.state.date.getMinutes()});
             },
             1000
@@ -30,10 +34,13 @@ class Timer extends React.Component {
     }
 
     render() {
+        const table = ['일과 외', '수업시간', '쉬는시간', '식사', '청소시간', '자습시간'];
+        const period = (this.state.period == null) ? null : <div>{String(table[this.state.period])}</div>
         return (
             <div>
                 <Clock format={'HH:mm:ss'} ticking={true}/>
-                <div>{String(this.state.period)}</div>
+                {period}
+                <div>{this.state.time}</div>
             </div>
         )
     }
