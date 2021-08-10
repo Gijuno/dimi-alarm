@@ -27,7 +27,7 @@ class Timer extends React.Component {
                         this.setState({ period: checked[1] });
                     }
                 }
-                this.setState({ minute: this.state.date.getMinutes()});
+                this.setState({ minute: min });
             },
             1000
         );
