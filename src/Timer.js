@@ -27,14 +27,14 @@ class Timer extends React.Component {
                         this.setState({ period: checked[1] });
                     }
                 }
-                this.setState({ minute: this.state.date.getMinutes()});
+                this.setState({ minute: min });
             },
             1000
         );
     }
 
     render() {
-        const table = ['일과 외', '수업시간', '쉬는시간', '식사', '청소시간', '자습시간'];
+        const table = ['일과 외', '수업시간', '쉬는시간', '식사', '청소 및 종례', '방과후 자율 학습', '야간 자율 학습'];
         const period = (this.state.period === null) ? null : <div>{String(table[this.state.period])}</div>
         return (
             <div>

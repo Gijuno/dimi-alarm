@@ -1,10 +1,9 @@
 import {bellPlayer} from "./App.js"
-var count = 0
 const Timechecker = (now) => {
-    console.log(now);
+    console.log(now)
     const times = [
-        ['0900', "1교시 시작", 1],
-        ['0950', "1교시 끝", 2],
+        ['2057', "1교시 시작", 1],
+        ['2058', "1교시 끝", 2],
         ['1000', "2교시 시작", 1],
         ['1050', "2교시 끝", 2],
         ['1100', "3교시 시작", 1],
@@ -16,25 +15,27 @@ const Timechecker = (now) => {
         ['1450', "6교시 시작", 1],
         ['1540', "6교시 끝", 2],
         ['1550', "7교시 시작", 1],
-        ['1640', "7교시 끝", 4]
+        ['1640', "7교시 끝", 4],
+        ['1640', "7교시 끝", 4],
+        ['1705', "방과후 수업 준비", 2],
+        ['1710', "방과후 1타임 시작", 5],
+        ['1750', "방과후 1타임 끝", 2],
+        ['1755', "방과후 2타임 시작", 5],
+        ['1835', "방과후 2타임 끝", 3],
+        ['1950', "야자 1타임 시작", 6],
+        ['2110', "야자 1타임 끝", 2],
+        ['2130', "야자 2타임 시작", 6],
+        ['2230', "야자 2타임 끝", 0],
     ];
+
     const checker = []
     for (let i in times) {
         checker.push(times[i][0].indexOf(now) !== -1 ? i : false)
     }
     const index = checker.findIndex((x) => x !== false)
-    if(index !== -1) {
-        count++
-        if (count===1) {
-            console.log("SUCCESS"); 
-            console.log("count === " + count);
-            bellPlayer()
-            return [times[index][1], times[index][2]];
-        } else {
-            console.log("count === " + count);
-            return "수업중";
-        }
-        
+    if (index !== -1) {
+        bellPlayer()
+        return [times[index][1], times[index][2]];
     } else {
         return null;
     }
