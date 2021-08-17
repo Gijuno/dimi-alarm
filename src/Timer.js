@@ -34,7 +34,7 @@ class Timer extends React.Component {
     }
 
     render() {
-        const table = ['일과 외', '수업시간', '쉬는시간', '식사', '청소 및 종례', '방과후 자율 학습', '야간 자율 학습'];
+        const table = ['일과 외', '수업시간', '쉬는시간', '식사', '청소 및 종례', '방과후 자율 학습', '야간 자율 학습', '1교시', '2교시', '3교시', '4교시', '5교시', '6교시', '7교시']; // 8부터 1교시
         const period = (this.state.period === null) ? null : <div>{String(table[this.state.period])}</div>
         return (
             <div>
