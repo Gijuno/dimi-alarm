@@ -2,8 +2,8 @@ import {bellPlayer} from "./App.js"
 const Timechecker = (now) => {
     console.log(now)
     const times = [
-        ['2126', "1교시 시작", 1],
-        ['2127', "1교시 끝", 2],
+        ['0900', "1교시 시작", 1],
+        ['0910', "1교시 끝", 2],
         ['1000', "2교시 시작", 1],
         ['1050', "2교시 끝", 2],
         ['1100', "3교시 시작", 1],
@@ -37,7 +37,10 @@ const Timechecker = (now) => {
         bellPlayer()
         return [times[index][1], times[index][2]];
     } else {
-        return null;
+        let i = 0;
+        while (parseInt(now) > parseInt(times[i][0])) {
+            i += 1;
+        } return [null, times[i-1][2]];
     }
 }
 
