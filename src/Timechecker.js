@@ -39,7 +39,10 @@ const Timechecker = (now) => {
         let i = 0;
         while (parseInt(now) > parseInt(times[i][0])) {
             i += 1;
-        } return [null, times[i-1][2]];
+            if (i === 23) {
+                return [null, 0]
+            }
+        } return (i === 0) ? [null, 0] : [null, times[i-1][2]];
     }
 }
 
