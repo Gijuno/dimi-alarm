@@ -1,6 +1,40 @@
 import React from "react";
 import Clock from "react-live-clock";
 import Timechecker from "./Timechecker";
+import styled from "styled-components";
+
+const Block = styled.div`
+    position: relative;
+    width: 722px;
+    height: 43px;
+    background-color: #6C26F1;
+    top: -40px;
+    opacity: 0.4;
+`;
+
+const Container = styled.div`
+    margin: auto;
+    width: 50%;
+    vertical-align: middle;
+    text-align: center;
+    margin-top: 17%;
+`;
+
+const Period = styled.div`
+    font-size: 100px;
+    margin-bottom: 25px;
+
+`;
+
+const Table = styled.div`
+    font-size: 40px;
+`;
+
+const clockstyle = {
+    "font-size": "70px",
+    "margin-bottom": "25px",
+}
+
 class Timer extends React.Component {
     constructor(props) {
         super(props);
@@ -34,14 +68,14 @@ class Timer extends React.Component {
     }
 
     render() {
-        const table = ['일과 외', '수업시간', '쉬는시간', '식사', '청소 및 종례', '방과후 자율 학습', '야간 자율 학습', '1교시', '2교시', '3교시', '4교시', '5교시', '6교시', '7교시']; // 8부터 1교시
+        const table = ['일과 외', '수업시간', '쉬는시간', '식사', '청소 및 종례', '방과후 자율 학습', '야간 자율 학습', '1교시 수업시간', '2교시 수업시간', '3교시 수업시간', '4교시 수업시간', '5교시 수업시간', '6교시 수업시간', '7교시 수업시간']; // 8부터 1교시
         const period = (this.state.period === null) ? null : <div>{String(table[this.state.period])}</div>
         return (
-            <div>
-                <Clock format={'HH:mm:ss'} ticking={true}/>
-                {period}
-                <div>{this.state.time}</div>
-            </div>
+            <Container>
+                <Clock style={clockstyle} format={'HH:mm:ss'} ticking={true}/>
+                <Period>{period}<Block/></Period>
+                <Table>{this.state.time}</Table>
+            </Container>
         )
     }
 }
