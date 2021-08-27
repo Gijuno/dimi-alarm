@@ -2,10 +2,11 @@ import React from "react";
 import Clock from "react-live-clock";
 import Timechecker from "./Timechecker";
 import styled from "styled-components";
+import './app.css';
 
 const Block = styled.div`
     position: relative;
-    width: 722px;
+    width: 100%;
     height: 43px;
     background-color: #6C26F1;
     top: -40px;
@@ -21,16 +22,19 @@ const Container = styled.div`
 `;
 
 const Period = styled.div`
+    font-family: 'S-CoreDream-9Black';
     font-size: 100px;
     margin-bottom: 25px;
 
 `;
 
 const Table = styled.div`
+    font-family: "S-CoreDream-5Medium";
     font-size: 40px;
 `;
 
 const clockstyle = {
+    "font-family": "S-CoreDream-6Bold",
     "font-size": "70px",
     "margin-bottom": "25px",
 }
