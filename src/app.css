@@ -10,3 +10,7 @@
     font-family: S-CoreDream-9Black;
     src: url(./fonts/S-CoreDream-9Black.woff);
 }
+@font-face {
+    font-family: Noto Sans KR;
+    src: url(./fonts/NotoSansKR-Bold.otf);
+}

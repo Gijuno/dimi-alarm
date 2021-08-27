@@ -28,6 +28,15 @@ const Period = styled.div`
 
 `;
 
+const Caution = styled.div`
+    position: absolute;
+    color: #DEDEDE;
+    font-size: 28px;
+    font-family: 'Noto Sans KR';
+    bottom: 2%;
+    right: 2%;
+`;
+
 const Table = styled.div`
     font-family: "S-CoreDream-5Medium";
     font-size: 40px;
@@ -75,11 +84,14 @@ class Timer extends React.Component {
         const table = ['일과 외', '수업시간', '쉬는시간', '식사', '청소 및 종례', '방과후 자율 학습', '야간 자율 학습', '1교시 수업시간', '2교시 수업시간', '3교시 수업시간', '4교시 수업시간', '5교시 수업시간', '6교시 수업시간', '7교시 수업시간']; // 8부터 1교시
         const period = (this.state.period === null) ? null : <div>{String(table[this.state.period])}</div>
         return (
+            <div>
             <Container>
                 <Clock style={clockstyle} format={'HH:mm:ss'} ticking={true}/>
                 <Period>{period}<Block/></Period>
                 <Table>{this.state.time}</Table>
             </Container>
+            <Caution>*주변에 피해가 가지 않게 미리 사운드 조절 해주세요!</Caution>
+            </div>
         )
     }
 }
