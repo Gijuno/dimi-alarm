@@ -22,7 +22,7 @@ const Container = styled.div`
 
 const Period = styled.div`
     font-family: S-CoreDream-9Black;
-    src: src/fonts/S-CoreDream-9Black.ttf;
+    src: src/fonts/S-CoreDream-9Black.woff;
     font-size: 100px;
     margin-bottom: 25px;
     margin-top: 25px;
@@ -30,13 +30,13 @@ const Period = styled.div`
 
 const Table = styled.div`
     font-family: S-CoreDream-5Medium;
-    src: src/fonts/S-CoreDream-5Medium.ttf;
+    src: src/fonts/S-CoreDream-5Medium.woff;
     font-size: 40px;
 `;
 
 const clockstyle = {
     "font-family": "S-CoreDream-6Bold",
-    "src": "src/fonts/S-CoreDream-6Bold.ttf",
+    "src": "src/fonts/S-CoreDream-6Bold.woff",
     "font-size": "70px",
 }
 
